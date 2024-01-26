@@ -1,0 +1,74 @@
+body {
+  font-family: "Helvetica", sans-serif;
+  min-height: 300vh;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  animation: slide auto linear;
+  animation-timeline: scroll();
+}
+
+section {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  background: rgba(46, 42, 181, 0.4);
+  min-height: 100vh;
+  padding: 1em clamp(1rem, 2vw, 4vw);
+}
+
+figure {
+  flex: 0 0 99.4vw;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+    translate: 0;
+  }
+  100% {
+    translate: calc(-100% - 100vw);
+  }
+}
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 1200px) {
+    html {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  figure {
+    margin: 0;
+    position: relative;
+  }
+}
